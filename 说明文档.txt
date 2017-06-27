@@ -1,0 +1,8 @@
+这次作业我的目标是先尝试独立完成,而后再学习别人实现
+1、思考:先设计Actor类用于封装人物线。 再设计Story类用于封装剧情
+2、在日志并输出到控制台 加lock 确保线程同步
+3、在EnvironmentArgument引入公有多线程控制信号量cancelTokenSource
+
+后期有空时再来完善
+1、使用ThreadPool和ManualResetEvent封装一个使用ThreadPool的
+2、增加可配置结合xml/json
