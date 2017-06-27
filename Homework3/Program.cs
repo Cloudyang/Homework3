@@ -15,11 +15,10 @@ namespace Homework3
         static void Main(string[] args)
         {
             ///定义：天龙八部
-          //  var tlbb = new Story();
+            //  var tlbb = new Story();
 
             ///扩展：增加角色及事件：慕容复
             var tlbb = new StoryEvolution();
-
 
             Stopwatch watch = new Stopwatch();
             watch.Start();

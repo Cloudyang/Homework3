@@ -129,6 +129,15 @@ namespace Model
         }
 
         /// <summary>
+        /// 新增代码：每个人物线全部完成，输入已结束
+        /// </summary>
+        /// <param name="actor"></param>
+        public virtual void EveryFinish(Actor actor)
+        {
+            LogHelper.WriteInfo($"{actor.Name}已结束");
+        }
+
+        /// <summary>
         /// 以上的任何一个人物线完成了，需要执行一件事
         /// </summary>
         /// <param name="actor"></param>

@@ -42,10 +42,10 @@ namespace Model
             while (!EnvironmentArgument.cancelTokenSource.IsCancellationRequested)
             {
                 var randYear = new Random().Next(0, 10000);
-                randYear = 2017;
                 if (randYear == DateTime.Now.Year)
                 {
-                    lock (LogHelper.objLock) //防止出现不正常输出
+                    ///新增代码，加上锁确保线程同步
+                    lock (LogHelper.objLock) 
                     {
                         LogHelper.WriteInfo("天降雷霆灭世，天龙八部的故事就此结束....");
                         EnvironmentArgument.cancelTokenSource.Cancel();

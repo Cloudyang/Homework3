@@ -27,6 +27,10 @@ namespace Model
         /// </summary>
         public void OnAction(Story story)
         {
+            ActorStoryEvent += s =>
+            {
+                s.EveryFinish(this);
+            };
             ActorStoryEvent?.Invoke(story);
         }
     }

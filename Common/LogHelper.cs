@@ -63,6 +63,7 @@ namespace Common
                 {
                     if (FirstStart)
                     {
+                        //更新代码：写日志的时候判断FirstStart后
                         WriteInfo(message, timeSecond, bgColor, fgColor);
                         FirstStart = false;
                         action?.Invoke();
