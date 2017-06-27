@@ -15,8 +15,8 @@ namespace Homework3
     {
         static void Main(string[] args)
         {
-          //  第一次生成Json配置使用
-          //  InitWriteJson();
+            //  第一次生成Json配置使用
+            //  InitWriteJson();
             #region 测试多线程带返回值演练
             Thread thread = new Thread(() =>
               {
@@ -61,7 +61,8 @@ namespace Homework3
                         "化功大法",
                         "生死符"
                      }
-                },new ActorInfo
+                },
+                new ActorInfo
                 {
                     Name = "扫地僧",
                     Color = ConsoleColor.Blue,
@@ -70,7 +71,8 @@ namespace Homework3
                         "无形高墙",
                         "皈依佛门",
                      }
-                },new ActorInfo
+                },
+                new ActorInfo
                 {
                     Name = "鸠摩智",
                     Color = ConsoleColor.Green,
