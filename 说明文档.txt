@@ -11,3 +11,4 @@
 1、感谢学长（一点半）提正，已完成修正：1、把监控线程放在其他线程前面。2、LogHelper.WriteInfo写日志的时候判断FirstStart后
 2、增加人物线结束后记录日志 修改：Actor.OnAction方法，新增Story.EveryFinish方法。 （实现思路：ActorStoryEvent后增加调整Story.EveryFinish） 
 3、清除在Pragram.Main方法中Task.Factory.StartNew方法中引用的CancellationToken.Token参数，原因后期没有Task.Factory.CancellationToken来调用
+4、增加Json配置读取加载代码

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common;
+using System.IO;
 
 namespace Model
 {
@@ -32,6 +33,31 @@ namespace Model
                 LogHelper.WriteInfo("复燕失败", action: Start, bgColor: ConsoleColor.Blue, fgColor: ConsoleColor.DarkCyan);
             };
             ActorDic.Add(nameof(mrf), mrf);
+            LoadJsonConfig();
+        }
+
+        /// <summary>
+        /// 加载json配置文件
+        /// </summary>
+        private void LoadJsonConfig()
+        {
+            var filePath = Path.Combine(EnvironmentArgument.JsonPath, "TLBB.json");
+            JsonHelper.ReadJsonFile<List<ActorInfo>>(filePath)
+                       .ForEach(actorInfo =>
+                       {
+                           Actor actor = new Actor()
+                           {
+                               Name = actorInfo.Name
+                           };
+                           actorInfo.StoryContent.ForEach((content) =>
+                           {
+                               actor.ActorStoryEvent += (story) =>
+                               {
+                                   LogHelper.WriteInfo(content, action: Start, bgColor: ConsoleColor.Black, fgColor: actorInfo.Color);
+                               };
+                           });
+                           ActorDic.Add(actorInfo.Name, actor);
+                       });
         }
 
         /// <summary>
