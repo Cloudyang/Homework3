@@ -125,7 +125,7 @@ namespace Model
         /// <param name="actor"></param>
         public virtual void AnyFinish(Actor actor)
         {
-            LogHelper.WriteInfo($"{actor.Name}已经做好准备啦。。。。");
+            LogHelper.WriteInfo($"{actor?.Name}已经做好准备啦。。。。");
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Model
         /// <param name="actor"></param>
         public virtual void EveryFinish(Actor actor)
         {
-            LogHelper.WriteInfo($"{actor.Name}已结束");
+            LogHelper.WriteInfo($"{actor?.Name}已结束");
         }
 
         /// <summary>
